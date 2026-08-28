@@ -103,7 +103,7 @@
 
         /* Hero Section */
         .hero {
-            padding: 6rem 0 4rem 0;
+            padding: 6rem 0 2rem 0;
             text-align: center;
             position: relative;
         }
@@ -130,16 +130,8 @@
             font-size: 1.25rem;
             color: var(--text-muted);
             max-width: 700px;
-            margin: 0 auto 3rem auto;
+            margin: 0 auto;
             font-weight: 300;
-        }
-
-        .cta-group {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
         }
 
         /* High-fidelity Button Styles */
@@ -187,6 +179,14 @@
         /* Features Section */
         .features {
             padding: 4rem 0 6rem 0;
+        }
+
+        .features + .features {
+            padding-top: 0;
+        }
+
+        .features-projects {
+            padding-bottom: 2rem;
         }
 
         .section-header {
@@ -278,6 +278,18 @@
             line-height: 1.6;
         }
 
+        .card-actions {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            margin-top: auto;
+        }
+
+        .card-actions .btn {
+            padding: 0.625rem 1.25rem;
+            font-size: 0.9rem;
+        }
+
         /* Technology Highlights */
         .tech {
             padding: 5rem 0;
@@ -366,23 +378,47 @@
     <header>
         <div class="container header-content">
             <div class="brand">Rails49</div>
-            <div class="badge">Computer Vision</div>
+            <div class="badge">Open Source</div>
         </div>
     </header>
 
     <main class="container">
         <section class="hero animate">
-            <h1 class="hero-title">Model Railroad<br><span>Track Occupancy Detection</span></h1>
-            <p class="hero-subtitle">Overhead cameras and a CNN image classifier detect trains and rolling stock on your layout — running entirely in the browser, with no server and no installation.</p>
-            <div class="cta-group">
-                <a href="https://occupancy.rails49.org/" class="btn btn-primary">Launch Occupancy UI</a>
-                <a href="https://github.com/rails49/occupancy" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Browse GitHub Repository</a>
+            <h1 class="hero-title">Model Railroad<br><span>Control and Intelligence</span></h1>
+            <p class="hero-subtitle">Software for running model railroads: seeing where the trains are, and deciding where they go next.</p>
+        </section>
+
+        <section class="features features-projects">
+            <div class="section-header animate delay-1">
+                <h2 class="section-title">Two Projects</h2>
+                <p class="section-subtitle">Each stands on its own, and they are built to meet.</p>
+            </div>
+
+            <div class="grid animate delay-2">
+                <div class="card">
+                    <div class="card-icon">📷</div>
+                    <h3 class="card-title">Occupancy</h3>
+                    <p class="card-desc">Camera-based track occupancy detection. Photograph the layout, mark the points you care about, train a classifier, and watch it run live — entirely in your browser.</p>
+                    <div class="card-actions">
+                        <a href="https://occupancy.rails49.org/" class="btn btn-primary">Launch the app</a>
+                        <a href="https://github.com/rails49/occupancy" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Repository</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">🚦</div>
+                    <h3 class="card-title">Control</h3>
+                    <p class="card-desc">Scheduling, dispatching, and driving trains. The research core is deadlock-free, high-throughput dispatch: many trains sharing one layout without ever backing each other into a corner.</p>
+                    <div class="card-actions">
+                        <a href="https://github.com/rails49/control" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Repository</a>
+                    </div>
+                </div>
             </div>
         </section>
 
         <section class="features">
             <div class="section-header animate delay-1">
-                <h2 class="section-title">How It Works</h2>
+                <h2 class="section-title">How Occupancy Works</h2>
                 <p class="section-subtitle">Photograph the layout, mark the spots you care about, train a classifier, watch it run live.</p>
             </div>
 
@@ -441,7 +477,7 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2026 Rails49. Detection is imperfect — responsibility for safe layout operation rests with the user. <a href="https://github.com/rails49/occupancy" target="_blank" rel="noopener noreferrer">Source Code</a></p>
+            <p>&copy; 2026 Rails49. Detection is imperfect — responsibility for safe layout operation rests with the user. <a href="https://github.com/rails49" target="_blank" rel="noopener noreferrer">Source Code</a></p>
         </div>
     </footer>
 
