@@ -42,8 +42,14 @@ It never fetches, so it fails only on a local edit.
 Direct upload to Cloudflare Pages, with no git connection:
 
 ```
-npx wrangler@3 pages deploy site --project-name=rails49-org --branch=main
+./deploy.sh
 ```
+
+Which is that one line of `wrangler`, plus the part that is easy to forget:
+the Cloudflare credential is an API token in 1Password, read at the point of
+use. Wrangler's own `login` is not involved, so a stale OAuth token in
+`~/Library/Preferences/.wrangler` says nothing about whether a deploy will
+work.
 
 `site/` is the whole of what ships, and it is the reason the deploy is one line
 with no guard in front of it: there is no build step and nothing generated, so
