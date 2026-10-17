@@ -24,18 +24,22 @@ See [rails49/control#47](https://github.com/rails49/control/issues/47).
 
 ## The look
 
-The band across the top and the colours it draws with are not this site's to
-choose: four rails49 UIs are bound to one set of values so that a person
-clicking from here to `occupancy` does not cross into a different-looking
-project. [`look/`](look/README.md) holds those values, copied verbatim from
-`rails49/.github` at a recorded commit, and `look/values.test.sh` asserts that
-both pages draw with them. Run it by hand after touching a page's colours:
+The band across the top is not this site's to draw. Both pages load
+[look](https://github.com/rails49/look)'s single-file build from jsDelivr at a
+tag and put `look-band` in a `look-shell`, so a person clicking from here to
+`occupancy` sees the same band. There is no rail: the site offers nothing to
+press. The rest of each page is the site's own.
+
+CI runs `look-check` on `site/`. It fails on a selector naming a `look-`
+element, on setting one of look's tokens or a `--sl-*` property, and on
+`sl-*::part()`. To run it locally:
 
 ```
-./look/values.test.sh
+pnpm --package=github:rails49/look#v0.5.0 dlx look-check site
 ```
 
-It never fetches, so it fails only on a local edit.
+A look release opens a pull request here that moves the tag in the pages and
+the workflow.
 
 ## Deploying
 
