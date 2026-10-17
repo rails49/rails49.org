@@ -10,17 +10,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
+    <script type="module" src="https://cdn.jsdelivr.net/gh/rails49/look@v0.5.0/dist/look.bundle.js"></script>
+
     <style>
         :root {
-            /* The look rules' values, as this page expresses them. The four
-               rail values are deliberately absent: this page takes the tokens
-               and the band and no rail, since it offers nothing to press.
-               `look/README.md` says where these two came from and what keeps
-               them in step. */
-            --band: #1d4ed8;
-            --band-ink: #ffffff;
-
-            /* The rest of the page is this site's own and binds nobody. It
+            /* The band is look's. The rest of the page is this site's own. It
                follows the scheme; the band does not. */
             --bg: #f8fafc;
             --bg-card: #ffffff;
@@ -60,10 +54,7 @@
             color: var(--text-main);
             font-family: var(--font-sans);
             line-height: 1.6;
-            min-height: 100vh;
             overflow-x: hidden;
-            display: flex;
-            flex-direction: column;
         }
 
         /* Container Utilities */
@@ -72,41 +63,6 @@
             margin: 0 auto;
             padding: 0 2rem;
             width: 100%;
-        }
-
-        /* The band. The site's name on its left, and nothing on its right: the
-           band's right holds controls a person finds in the same spot in every
-           UI, and this page has none. 60px is `occupancy`'s height, which the
-           rules do not bind but there is no reason to differ on. */
-        .band {
-            background-color: var(--band);
-            color: var(--band-ink);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .band-content {
-            display: flex;
-            align-items: center;
-            height: 60px;
-        }
-
-        .band-name {
-            font-family: var(--font-display);
-            font-size: 1.5rem;
-            font-weight: 800;
-            letter-spacing: -0.5px;
-            color: var(--band-ink);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .band-name::before {
-            content: "🚂";
-            font-size: 1.3rem;
         }
 
         /* Hero Section */
@@ -321,7 +277,6 @@
 
         /* Footer */
         footer {
-            margin-top: auto;
             padding: 3rem 0;
             border-top: 1px solid var(--border-card);
             background: var(--bg-card);
@@ -366,12 +321,9 @@
     </style>
 </head>
 <body>
+<look-shell>
 
-    <header class="band">
-        <div class="container band-content">
-            <a class="band-name" href="/">Rails49</a>
-        </div>
-    </header>
+    <look-band><look-about name="Rails49"></look-about></look-band>
 
     <main class="container">
         <section class="hero animate">
@@ -472,5 +424,6 @@
         </div>
     </footer>
 
+</look-shell>
 </body>
 </html>

@@ -4,13 +4,7 @@
 #
 # There is no build step and nothing generated: what is in git is what reaches
 # the web, so nothing runs before the upload and there is no guard in front of
-# it. `site/` is the whole of what ships (README.md), and `look/` — beside this
-# script rather than inside `site/` — is not served.
-#
-# The look check is deliberately not run here. It reports that this repository
-# has fallen out of step with a decision taken elsewhere, which is not a reason
-# to refuse a deploy (ADR-0005 keeps it outside every gate). Run it by hand:
-# ./look/values.test.sh
+# it. `site/` is the whole of what ships (README.md).
 #
 set -euo pipefail
 
