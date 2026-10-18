@@ -2,6 +2,8 @@
 
 How the engineering skills should consume this repo's domain documentation when exploring the codebase. This is a single-context repo.
 
+Org [ADR-0017](https://github.com/rails49/.github/blob/main/docs/adr/0017-each-fact-has-one-owner-and-an-accepted-adr-does-not-change.md) says what each kind of doc holds.
+
 ## Before exploring, read these
 
 - `CONTEXT.md` at the repo root: the glossary.
