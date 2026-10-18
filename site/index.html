@@ -213,6 +213,35 @@
             letter-spacing: -0.3px;
         }
 
+        .status {
+            align-self: flex-start;
+            padding: 0.2rem 0.6rem;
+            border-radius: 6px;
+            background: var(--accent-soft);
+            color: var(--accent);
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .section-header .status {
+            display: inline-block;
+            margin-bottom: 0.75rem;
+        }
+
+        .section-more {
+            margin-top: 2rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-weight: 300;
+        }
+
+        .section-more a,
+        .card-desc a {
+            color: var(--accent);
+        }
+
         .card-desc {
             color: var(--text-muted);
             font-size: 0.95rem;
@@ -333,15 +362,16 @@
 
         <section class="features features-projects">
             <div class="section-header animate delay-1">
-                <h2 class="section-title">Two Projects</h2>
+                <h2 class="section-title">Projects</h2>
                 <p class="section-subtitle">Each stands on its own, and they are built to meet.</p>
             </div>
 
             <div class="grid animate delay-2">
                 <div class="card">
                     <div class="card-icon">📷</div>
+                    <span class="status">Alpha</span>
                     <h3 class="card-title">Occupancy</h3>
-                    <p class="card-desc">Camera-based track occupancy detection. Photograph the layout, mark the points you care about, train a classifier, and watch it run live — entirely in your browser.</p>
+                    <p class="card-desc">Camera-based track occupancy detection. Photograph the layout, mark the cars and the sensors, and watch occupancy live — entirely in your browser. No trained model is published yet, so the live view shows every sensor as unknown.</p>
                     <div class="card-actions">
                         <a href="https://occupancy.rails49.org/" class="btn btn-primary">Launch the app</a>
                         <a href="https://github.com/rails49/occupancy" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Repository</a>
@@ -350,6 +380,7 @@
 
                 <div class="card">
                     <div class="card-icon">🚦</div>
+                    <span class="status">Alpha</span>
                     <h3 class="card-title">Control</h3>
                     <p class="card-desc">Scheduling, dispatching, and driving trains. The research core is deadlock-free, high-throughput dispatch: many trains sharing one layout without ever backing each other into a corner.</p>
                     <div class="card-actions">
@@ -357,37 +388,40 @@
                     </div>
                 </div>
             </div>
+
+            <p class="section-more">The rest of rails49 (command station, signals, the layout corpus, setup) is listed on the <a href="https://github.com/rails49" target="_blank" rel="noopener noreferrer">rails49 GitHub profile</a>.</p>
         </section>
 
         <section class="features">
             <div class="section-header animate delay-1">
+                <span class="status">Alpha</span>
                 <h2 class="section-title">How Occupancy Works</h2>
-                <p class="section-subtitle">Photograph the layout, mark the spots you care about, train a classifier, watch it run live.</p>
+                <p class="section-subtitle">Photograph the layout, mark the cars and the sensors, and watch occupancy live.</p>
             </div>
 
             <div class="grid animate delay-2">
                 <div class="card">
                     <div class="card-icon">📐</div>
                     <h3 class="card-title">Layout Editor</h3>
-                    <p class="card-desc">Load overhead photographs of your layout, calibrate the scale against a known reference length, and mark each point you want monitored as track, train, or coupling.</p>
+                    <p class="card-desc">Load overhead photographs of your layout, calibrate the scale against a known reference length, mark each car by its two ends, and place the sensors you want reported.</p>
                 </div>
 
                 <div class="card">
                     <div class="card-icon">📦</div>
                     <h3 class="card-title">The .r49 Format</h3>
-                    <p class="card-desc">A single portable archive holding your layout photographs alongside a validated manifest of scale, calibration, and every labelled marker. Open and save it straight from the browser.</p>
+                    <p class="card-desc">A single portable archive holding your layout photographs alongside a validated manifest of scale, calibration, and every labelled car. Open and save it straight from the browser, and share it with the <a href="https://github.com/rails49/r49" target="_blank" rel="noopener noreferrer">community corpus</a>.</p>
                 </div>
 
                 <div class="card">
                     <div class="card-icon">🧠</div>
-                    <h3 class="card-title">ResNet-18 Classifier</h3>
-                    <p class="card-desc">Image crops extracted around each marker train a ResNet-18 convolutional network with Fastai, exported to ONNX for fast, portable inference.</p>
+                    <h3 class="card-title">Trained From Shared Layouts</h3>
+                    <p class="card-desc">A detector trained on the labelled cars in the corpus finds every car in each camera frame. No trained model is published yet.</p>
                 </div>
 
                 <div class="card">
                     <div class="card-icon">🎥</div>
                     <h3 class="card-title">Live View</h3>
-                    <p class="card-desc">Point a phone or tablet camera at the layout and every marker is classified in real time, with occupancy drawn as an overlay and per-frame timing shown alongside.</p>
+                    <p class="card-desc">Point a phone or tablet camera at the layout and each sensor shows occupied, clear or unknown. If the camera has moved since the photographs were taken, the view stops reporting until you override it.</p>
                 </div>
 
                 <div class="card">
@@ -399,20 +433,20 @@
                 <div class="card">
                     <div class="card-icon">📏</div>
                     <h3 class="card-title">Scale Aware</h3>
-                    <p class="card-desc">Calibration is expressed in dots-per-track, so a model trained on one layout transfers to another regardless of gauge, from Z through G scale.</p>
+                    <p class="card-desc">Calibration is expressed in dots-per-track. The goal is a model trained on one layout that transfers to another regardless of gauge, from Z through G scale.</p>
                 </div>
             </div>
         </section>
 
         <section class="tech">
             <div class="container">
-                <p class="tech-label">Built With Cutting-Edge Tech</p>
+                <p class="tech-label">Built With</p>
                 <div class="tech-list">
                     <div class="tech-item">Lit & Vite</div>
                     <div class="tech-item">TypeScript</div>
                     <div class="tech-item">ONNX Runtime</div>
                     <div class="tech-item">WebAssembly</div>
-                    <div class="tech-item">Fastai & PyTorch</div>
+                    <div class="tech-item">PyTorch</div>
                 </div>
             </div>
         </section>
