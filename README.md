@@ -11,16 +11,18 @@ result, so it was a deploy staging directory that happened to hold a landing
 page. Three of that repo's 95 commits ever touched it.
 
 Splitting it out gives occupancy an origin of its own, `occupancy.rails49.org`,
-and the apex to the landing page and the docs. control's UI is not served under
-`rails49.org`: an installation serves it at `control.<box name>` (org
-[ADR-0007](https://github.com/rails49/.github/blob/main/docs/adr/0007-an-installation-is-a-name-and-every-ui-is-a-label-under-it.md)).
-The split also dissolves a standing tension in the old setup: the
+and the apex to the landing page and the docs. That also dissolves a standing
+tension in the old setup: the
 occupancy app needs `Cross-Origin-Embedder-Policy: require-corp` so onnxruntime
 can use more than one WASM thread, and this page loads Google Fonts
 cross-origin, which `require-corp` blocks. Sharing an origin meant scoping the
 header to `/ui/*` and keeping the two halves out of each other's way. On
 separate origins each simply sets what it needs, and this repo needs no
 `_headers` at all.
+
+The control UI is not one of the project's own sites: each installation serves
+it at `control.<box name>` (org
+[ADR-0007](https://github.com/rails49/.github/blob/main/docs/adr/0007-an-installation-is-a-name-and-every-ui-is-a-label-under-it.md)).
 
 See [rails49/control#47](https://github.com/rails49/control/issues/47).
 
