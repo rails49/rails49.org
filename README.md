@@ -39,7 +39,7 @@ element, on setting one of look's tokens or a `--sl-*` property, and on
 `sl-*::part()`. To run it locally:
 
 ```
-pnpm --package=github:rails49/look#v0.7.0 dlx look-check site
+pnpm --package=github:rails49/look#v0.8.0 dlx look-check site
 ```
 
 A look release opens a pull request here that moves the tag in the pages and
