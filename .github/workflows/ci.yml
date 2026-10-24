@@ -17,4 +17,4 @@ jobs:
         with:
           node-version: 24
       # At the tag the pages load the bundle from; a release of look moves both.
-      - run: pnpm --package=github:rails49/look#v0.9.0 dlx look-check site
+      - run: pnpm --package=github:rails49/look#v0.10.0 dlx look-check site
