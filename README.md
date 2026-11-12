@@ -21,8 +21,8 @@ separate origins each simply sets what it needs, and this repo needs no
 `_headers` at all.
 
 The control UI is not one of the project's own sites: each installation serves
-it at `control.<box name>` (org
-[ADR-0007](https://github.com/rails49/.github/blob/main/docs/adr/0007-an-installation-is-a-name-and-every-ui-is-a-label-under-it.md)).
+it at `control.<box name>` or on its UI port (org
+[ADR-0024](https://github.com/rails49/.github/blob/main/docs/adr/0024-each-ui-has-an-origin-of-its-own-at-a-label-or-a-ui-port.md)).
 
 See [rails49/control#47](https://github.com/rails49/control/issues/47).
 
