@@ -67,3 +67,8 @@ not served, and anything added beside it is not served either. Put a file in
 `site/` and it is public. The exception is `site/_redirects`, which Cloudflare
 reads as configuration and does not serve: it sends `/install` to the
 [installation](https://github.com/rails49/installation)'s install script.
+
+## License
+
+MIT; see [LICENSE](LICENSE). It sits at the root, outside `site/`, so it is not
+served.
