@@ -64,4 +64,6 @@ with no guard in front of it: there is no build step and nothing generated, so
 what is in git is what reaches the web. That only holds while the publishable
 content and the repo's own files stay separated — `README.md` at the root is
 not served, and anything added beside it is not served either. Put a file in
-`site/` and it is public.
+`site/` and it is public. The exception is `site/_redirects`, which Cloudflare
+reads as configuration and does not serve: it sends `/install` to the
+[installation](https://github.com/rails49/installation)'s install script.
