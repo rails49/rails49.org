@@ -30,8 +30,9 @@ See [rails49/control#47](https://github.com/rails49/control/issues/47).
 
 The band across the top is not this site's to draw. Both pages load
 [look](https://github.com/rails49/look)'s single-file build from jsDelivr at a
-tag and put `look-band` in a `look-shell`, so a person clicking from here to
-`occupancy` sees the same band. There is no rail: the site offers nothing to
+tag, with `look.css` linked ahead of it at the same tag so the first paint is
+already styled, and put `look-band` in a `look-shell`, so a person clicking from
+here to `occupancy` sees the same band. There is no rail: the site offers nothing to
 press. The rest of each page is the site's own.
 
 CI runs `look-check` on `site/`. It fails on a selector naming a `look-`
