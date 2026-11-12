@@ -39,11 +39,11 @@ element, on setting one of look's tokens or a `--sl-*` property, and on
 `sl-*::part()`. To run it locally:
 
 ```
-pnpm --package=github:rails49/look#v0.11.0 dlx look-check site
+./scripts/check.sh
 ```
 
 A look release opens a pull request here that moves the tag in the pages and
-the workflow.
+`scripts/check.sh`.
 
 ## Deploying
 
