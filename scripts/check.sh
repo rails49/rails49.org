@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# The gate: CI runs this on every PR, and implement-loop runs it on the host.
+# The gate: CI runs this on every PR.
 set -euo pipefail
 cd "$(dirname "$0")/.."
 # At the tag the pages load the bundle from; a release of look moves both.
